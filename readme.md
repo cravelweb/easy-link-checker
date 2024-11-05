@@ -1,10 +1,10 @@
-# Simple Link Checker
+# Easy Link Checker
 
-*Read this in other languages: [日本語](#シンプルリンクチェッカー)*
+*Read this in other languages: [日本語](#イージーリンクチェッカー)*
 
 ## Description
 
-Simple Link Checker is a **lightweight** WordPress plugin that allows you to manually check for broken links (internal & external) in selected posts from the admin panel. It does not run any background processes, nor does it modify or save any data. You can use it easily whenever needed.
+Easy Link Checker is a **lightweight** WordPress plugin that allows you to manually check for broken links (internal & external) in selected posts from the admin panel. It does not run any background processes, nor does it modify or save any data. You can use it easily whenever needed.
 
 ## Features
 
@@ -21,7 +21,7 @@ Simple Link Checker is a **lightweight** WordPress plugin that allows you to man
 ## Installation
 
 1. Download the plugin zip file.
-2. Upload the plugin files to the `/wp-content/plugins/simple-link-checker` directory, or install the plugin through the WordPress plugins screen directly.
+2. Upload the plugin files to the `/wp-content/plugins/easy-link-checker` directory, or install the plugin through the WordPress plugins screen directly.
 3. Activate the plugin through the 'Plugins' screen in WordPress.
 
 ## Usage
@@ -49,11 +49,11 @@ This plugin is licensed under the [GNU General Public License v2 or later](https
 
 ---
 
-# シンプルリンクチェッカー
+# イージーリンクチェッカー
 
 ## 説明
 
-Simple Link Checkerは、WordPressの管理画面から選択した投稿内のリンク切れ（内部リンクおよび外部リンク）を手動でチェックできる軽量なプラグインです。バックグラウンドでの動作はなく、データの書き換えや保存を行いません。必要なときに簡単に利用できます。
+Easy Link Checkerは、WordPressの管理画面から選択した投稿内のリンク切れ（内部リンクおよび外部リンク）を手動でチェックできる軽量なプラグインです。バックグラウンドでの動作はなく、データの書き換えや保存を行いません。必要なときに簡単に利用できます。
 
 ## 特徴
 
@@ -70,7 +70,7 @@ Simple Link Checkerは、WordPressの管理画面から選択した投稿内の�
 ## インストール
 
 1. プラグインのZIPファイルをダウンロードします。
-2. プラグインファイルを `/wp-content/plugins/simple-link-checker` ディレクトリにアップロードするか、WordPressのプラグイン画面から直接インストールします。
+2. プラグインファイルを `/wp-content/plugins/easy-link-checker` ディレクトリにアップロードするか、WordPressのプラグイン画面から直接インストールします。
 3. WordPressの「プラグイン」画面でプラグインを有効化します。
 
 ## 使い方

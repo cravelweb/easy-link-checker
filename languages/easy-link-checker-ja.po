@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Simple Link Checker\n"
-"POT-Creation-Date: 2024-11-06 02:29+0900\n"
-"PO-Revision-Date: 2024-11-06 02:31+0900\n"
+"Project-Id-Version: Easy Link Checker\n"
+"POT-Creation-Date: 2024-11-06 03:25+0900\n"
+"PO-Revision-Date: 2024-11-06 03:25+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: simple-internal-link-checker.php\n"
+"X-Poedit-WPHeader: easy-link-checker.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -20,176 +20,179 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: simple-internal-link-checker.php:57
+#: easy-link-checker.php:59
 msgid "Checking..."
 msgstr "チェック中..."
 
-#: simple-internal-link-checker.php:58
+#: easy-link-checker.php:60
 msgid "Please select at least one post to check."
 msgstr "チェックする投稿が1件も選択されていません。"
 
-#: simple-internal-link-checker.php:59
+#: easy-link-checker.php:61
 msgid "No Links"
 msgstr "リンクなし"
 
-#: simple-internal-link-checker.php:60
+#: easy-link-checker.php:62
 msgid "Broken Links"
 msgstr "リンク切れ"
 
-#: simple-internal-link-checker.php:61
+#: easy-link-checker.php:63
 msgid "Skipped"
 msgstr "スキップ"
 
-#: simple-internal-link-checker.php:62
+#: easy-link-checker.php:64
 msgid "Valid Links"
 msgstr "適切なリンク"
 
-#: simple-internal-link-checker.php:63
+#: easy-link-checker.php:65
 msgid "Redirected Links"
 msgstr "リダイレクトあり"
 
-#: simple-internal-link-checker.php:64
+#: easy-link-checker.php:66
 msgid "Broken Images"
 msgstr "画像リンク切れ"
 
-#: simple-internal-link-checker.php:65
+#: easy-link-checker.php:67
 msgid "Valid Images"
 msgstr "適切な画像"
 
-#: simple-internal-link-checker.php:66
+#: easy-link-checker.php:68
 msgid "Failed to check links. Please try again."
 msgstr "チェックに失敗しました。時間をおいて再度お試しください。"
 
-#: simple-internal-link-checker.php:67 simple-internal-link-checker.php:558
+#: easy-link-checker.php:69 easy-link-checker.php:560
 #, php-format
 msgid "Redirected %s times"
 msgstr "%s回のリダイレクトが検出されました"
 
-#. Plugin Name of the plugin/theme
-#: simple-internal-link-checker.php:87 simple-internal-link-checker.php:153
+#: easy-link-checker.php:89 easy-link-checker.php:155
 msgid "Simple Link Checker"
 msgstr "Simple Link Checker"
 
-#: simple-internal-link-checker.php:88
+#: easy-link-checker.php:90
 msgid "Link Checker"
 msgstr "リンクチェッカー"
 
-#: simple-internal-link-checker.php:156
+#: easy-link-checker.php:158
 msgid "Select Post Type:"
 msgstr "投稿タイプ:"
 
-#: simple-internal-link-checker.php:169
+#: easy-link-checker.php:171
 msgid "Posts Per Page:"
 msgstr "件数:"
 
-#: simple-internal-link-checker.php:179
+#: easy-link-checker.php:181
 msgid "Load Posts"
 msgstr "読み込み"
 
-#: simple-internal-link-checker.php:213
+#: easy-link-checker.php:215
 msgid "ID"
 msgstr "ID"
 
-#: simple-internal-link-checker.php:214
+#: easy-link-checker.php:216
 msgid "Title"
 msgstr "タイトル"
 
-#: simple-internal-link-checker.php:215
+#: easy-link-checker.php:217
 msgid "Status"
 msgstr "状態"
 
-#: simple-internal-link-checker.php:216
+#: easy-link-checker.php:218
 msgid "Published Date"
 msgstr "公開日"
 
-#: simple-internal-link-checker.php:217
+#: easy-link-checker.php:219
 msgid "Modified Date"
 msgstr "変更日"
 
-#: simple-internal-link-checker.php:218
+#: easy-link-checker.php:220
 msgid "Link Check Status"
 msgstr "チェック結果"
 
-#: simple-internal-link-checker.php:224 simple-internal-link-checker.php:285
+#: easy-link-checker.php:226 easy-link-checker.php:287
 msgid "All"
 msgstr "全て"
 
-#: simple-internal-link-checker.php:225 simple-internal-link-checker.php:286
+#: easy-link-checker.php:227 easy-link-checker.php:288
 msgid "Published"
 msgstr "公開済み"
 
-#: simple-internal-link-checker.php:226 simple-internal-link-checker.php:287
+#: easy-link-checker.php:228 easy-link-checker.php:289
 msgid "Private"
 msgstr "プライベート"
 
-#: simple-internal-link-checker.php:227 simple-internal-link-checker.php:288
+#: easy-link-checker.php:229 easy-link-checker.php:290
 msgid "Draft"
 msgstr "下書き"
 
-#: simple-internal-link-checker.php:228 simple-internal-link-checker.php:289
+#: easy-link-checker.php:230 easy-link-checker.php:291
 msgid "Pending"
 msgstr "保留"
 
-#: simple-internal-link-checker.php:229 simple-internal-link-checker.php:290
+#: easy-link-checker.php:231 easy-link-checker.php:292
 msgid "Trash"
 msgstr "ゴミ箱"
 
-#: simple-internal-link-checker.php:241
+#: easy-link-checker.php:243
 msgid "Not Checked"
 msgstr "未チェック"
 
-#: simple-internal-link-checker.php:252
+#: easy-link-checker.php:254
 msgid "No posts found."
 msgstr "投稿は見つかりませんでした。"
 
-#: simple-internal-link-checker.php:261
+#: easy-link-checker.php:263
 msgid "Check Links"
 msgstr "リンクタグ（a）をチェック対象にする"
 
-#: simple-internal-link-checker.php:262
+#: easy-link-checker.php:264
 msgid "Check Internal Links Only"
 msgstr "内部リンクのみをチェック対象にする"
 
-#: simple-internal-link-checker.php:263
+#: easy-link-checker.php:265
 msgid "Check Images"
 msgstr "画像タグ（img）をチェック対象にする"
 
-#: simple-internal-link-checker.php:267
+#: easy-link-checker.php:269
 msgid "Start Check"
 msgstr "チェック開始"
 
-#: simple-internal-link-checker.php:267
+#: easy-link-checker.php:269
 msgid "Loading..."
 msgstr "読み込んでいます…"
 
-#: simple-internal-link-checker.php:325
+#: easy-link-checker.php:327
 msgid "All dates"
 msgstr "すべての日付"
 
-#: simple-internal-link-checker.php:328
+#: easy-link-checker.php:330
 msgid "F Y"
 msgstr "Y年n月"
 
-#: simple-internal-link-checker.php:368
+#: easy-link-checker.php:370
 msgid "All Categories"
 msgstr "カテゴリー一覧"
 
-#: simple-internal-link-checker.php:375
+#: easy-link-checker.php:377
 msgid "Keywords"
 msgstr "キーワード"
 
-#: simple-internal-link-checker.php:378
+#: easy-link-checker.php:380
 msgid "Filter"
 msgstr "フィルター"
 
-#: simple-internal-link-checker.php:384
+#: easy-link-checker.php:386
 #, php-format
 msgid "%s items"
 msgstr "%s個の項目"
 
-#: simple-internal-link-checker.php:486
+#: easy-link-checker.php:488
 msgid "Permission denied"
 msgstr "アクセス拒否"
+
+#. Plugin Name of the plugin/theme
+msgid "Easy Link Checker"
+msgstr "Easy Link Checker"
 
 #. Description of the plugin/theme
 msgid ""
@@ -198,8 +201,15 @@ msgid ""
 msgstr "シンプル、軽量のリンクチェッカー。"
 
 #. Author of the plugin/theme
-msgid "Your Name"
-msgstr "名前"
+msgid "Cravel"
+msgstr "クラベル（Cravel）"
+
+#. Author URI of the plugin/theme
+msgid "https://cravelweb.com"
+msgstr "https://cravelweb.com"
+
+#~ msgid "Your Name"
+#~ msgstr "名前"
 
 #~ msgid "n/Y"
 #~ msgstr "Y年n月"

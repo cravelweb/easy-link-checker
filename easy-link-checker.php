@@ -42,7 +42,7 @@ class Easy_Link_Checker
    */
   public function mlc_load_textdomain()
   {
-    load_plugin_textdomain('simple-link-checker', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    load_plugin_textdomain('easy-link-checker', false, dirname(plugin_basename(__FILE__)) . '/languages');
   }
 
   /**
@@ -50,23 +50,23 @@ class Easy_Link_Checker
    */
   public function mlc_enqueue_scripts($hook)
   {
-    if ($hook != 'toplevel_page_simple-link-checker') return;
+    if ($hook != 'toplevel_page_easy-link-checker') return;
     wp_enqueue_script('mlc-admin', plugin_dir_url(__FILE__) . 'js/admin.js', ['jquery'], '1.0.0', true);
     wp_localize_script('mlc-admin', 'mlc_vars', [
       'ajax_url' => admin_url('admin-ajax.php'),
       'nonce' => wp_create_nonce('mlc_nonce'),
       'i18n' => [
-        'checking' => __('Checking...', 'simple-link-checker'),
-        'please_select' => __('Please select at least one post to check.', 'simple-link-checker'),
-        'no_links' => __('No Links', 'simple-link-checker'),
-        'broken_links' => __('Broken Links', 'simple-link-checker'),
-        'skipped' => __('Skipped', 'simple-link-checker'),
-        'valid_links' => __('Valid Links', 'simple-link-checker'),
-        'redirected_links' => __('Redirected Links', 'simple-link-checker'),
-        'broken_images' => __('Broken Images', 'simple-link-checker'),
-        'valid_images' => __('Valid Images', 'simple-link-checker'),
-        'failed_to_check' => __('Failed to check links. Please try again.', 'simple-link-checker'),
-        'redirected_times' => __('Redirected %s times', 'simple-link-checker'),
+        'checking' => __('Checking...', 'easy-link-checker'),
+        'please_select' => __('Please select at least one post to check.', 'easy-link-checker'),
+        'no_links' => __('No Links', 'easy-link-checker'),
+        'broken_links' => __('Broken Links', 'easy-link-checker'),
+        'skipped' => __('Skipped', 'easy-link-checker'),
+        'valid_links' => __('Valid Links', 'easy-link-checker'),
+        'redirected_links' => __('Redirected Links', 'easy-link-checker'),
+        'broken_images' => __('Broken Images', 'easy-link-checker'),
+        'valid_images' => __('Valid Images', 'easy-link-checker'),
+        'failed_to_check' => __('Failed to check links. Please try again.', 'easy-link-checker'),
+        'redirected_times' => __('Redirected %s times', 'easy-link-checker'),
       ],
     ]);
   }
@@ -76,7 +76,7 @@ class Easy_Link_Checker
    */
   public function mlc_enqueue_styles($hook)
   {
-    if ($hook != 'toplevel_page_simple-link-checker') return;
+    if ($hook != 'toplevel_page_easy-link-checker') return;
     wp_enqueue_style('mlc-admin', plugin_dir_url(__FILE__) . 'css/admin.css', [], '1.0.0');
   }
 
@@ -86,10 +86,10 @@ class Easy_Link_Checker
   public function mlc_add_admin_page()
   {
     add_menu_page(
-      __('Simple Link Checker', 'simple-link-checker'), // ページタイトル
-      __('Link Checker', 'simple-link-checker'), // メニュータイトル
+      __('Simple Link Checker', 'easy-link-checker'), // ページタイトル
+      __('Link Checker', 'easy-link-checker'), // メニュータイトル
       'manage_options', // 権限
-      'simple-link-checker', // スラッグ
+      'easy-link-checker', // スラッグ
       [$this, 'mlc_admin_page'], // コールバック関数
       'dashicons-admin-links' // アイコン
     );
@@ -152,10 +152,10 @@ class Easy_Link_Checker
     $total_pages = ceil($total_posts / $posts_per_page);
 ?>
     <div class="wrap">
-      <h1><?php _e('Simple Link Checker', 'simple-link-checker'); ?></h1>
+      <h1><?php _e('Simple Link Checker', 'easy-link-checker'); ?></h1>
       <form id="mlc-post-type-form" method="get">
-        <input type="hidden" name="page" value="simple-link-checker">
-        <label for="post_type"><?php _e('Select Post Type:', 'simple-link-checker'); ?></label>
+        <input type="hidden" name="page" value="easy-link-checker">
+        <label for="post_type"><?php _e('Select Post Type:', 'easy-link-checker'); ?></label>
         <select id="post_type" name="post_type">
           <?php
           $post_types = get_post_types(['public' => true], 'objects');
@@ -168,7 +168,7 @@ class Easy_Link_Checker
           }
           ?>
         </select>
-        <label for="posts_per_page"><?php _e('Posts Per Page:', 'simple-link-checker'); ?></label>
+        <label for="posts_per_page"><?php _e('Posts Per Page:', 'easy-link-checker'); ?></label>
         <select id="posts_per_page" name="posts_per_page">
           <option value="20" <?php selected($posts_per_page, 20); ?>>20</option>
           <option value="50" <?php selected($posts_per_page, 50); ?>>50</option>
@@ -178,7 +178,7 @@ class Easy_Link_Checker
           <option value="300" <?php selected($posts_per_page, 300); ?>>300</option>
           <option value="500" <?php selected($posts_per_page, 500); ?>>500</option>
         </select>
-        <button type="submit" class="button button-primary"><?php _e('Load Posts', 'simple-link-checker'); ?></button>
+        <button type="submit" class="button button-primary"><?php _e('Load Posts', 'easy-link-checker'); ?></button>
       </form>
 
       <form id="mlc-form" method="get">
@@ -197,7 +197,7 @@ class Easy_Link_Checker
           }
         }
         ?>
-        <input type="hidden" name="page" value="simple-link-checker">
+        <input type="hidden" name="page" value="easy-link-checker">
         <input type="hidden" name="post_type" value="<?php echo esc_attr($post_type); ?>">
         <input type="hidden" name="posts_per_page" value="<?php echo esc_attr($posts_per_page); ?>">
         <input type="hidden" name="paged" value="<?php echo esc_attr($current_page); ?>">
@@ -212,12 +212,12 @@ class Easy_Link_Checker
               <thead>
                 <tr>
                   <th scope="col" class="manage-column column-cb check-column"><input type="checkbox" /></th>
-                  <th scope="col" class="manage-column" style="width: 6%"><?php _e('ID', 'simple-link-checker'); ?></th>
-                  <th scope="col" class="manage-column" style="width: auto!important;"><?php _e('Title', 'simple-link-checker'); ?></th>
-                  <th scope="col" class="manage-column" style="width: 8%"><?php _e('Status', 'simple-link-checker'); ?></th>
-                  <th scope="col" class="manage-column" style="width: 12%"><?php _e('Published Date', 'simple-link-checker'); ?></th>
-                  <th scope="col" class="manage-column" style="width: 12%"><?php _e('Modified Date', 'simple-link-checker'); ?></th>
-                  <th scope="col" class="manage-column"><?php _e('Link Check Status', 'simple-link-checker'); ?></th>
+                  <th scope="col" class="manage-column" style="width: 6%"><?php _e('ID', 'easy-link-checker'); ?></th>
+                  <th scope="col" class="manage-column" style="width: auto!important;"><?php _e('Title', 'easy-link-checker'); ?></th>
+                  <th scope="col" class="manage-column" style="width: 8%"><?php _e('Status', 'easy-link-checker'); ?></th>
+                  <th scope="col" class="manage-column" style="width: 12%"><?php _e('Published Date', 'easy-link-checker'); ?></th>
+                  <th scope="col" class="manage-column" style="width: 12%"><?php _e('Modified Date', 'easy-link-checker'); ?></th>
+                  <th scope="col" class="manage-column"><?php _e('Link Check Status', 'easy-link-checker'); ?></th>
                 </tr>
               </thead>
               <tbody id="the-list">
@@ -240,7 +240,7 @@ class Easy_Link_Checker
                     <td class="post-status"><?= esc_html($statuses[$post->post_status]); ?></td>
                     <td class="post-published-date"><?= esc_html(get_the_date('', $post)) . ' ' . esc_html(get_the_time('', $post)); ?></td>
                     <td class="post-modified-date"><?= esc_html(get_the_modified_date('', $post)) . ' ' . esc_html(get_the_modified_time('', $post)); ?></td>
-                    <td class="post-link-check-status"><span class="link-check-status" data-post-id="<?= esc_attr($post->ID); ?>"><?php _e('Not Checked', 'simple-link-checker'); ?></span></td>
+                    <td class="post-link-check-status"><span class="link-check-status" data-post-id="<?= esc_attr($post->ID); ?>"><?php _e('Not Checked', 'easy-link-checker'); ?></span></td>
                   </tr>
                 <?php
                 endforeach;
@@ -251,7 +251,7 @@ class Easy_Link_Checker
           else :
           ?>
             <div style="clear: both;">
-              <p><?php _e('No posts found.', 'simple-link-checker'); ?></p>
+              <p><?php _e('No posts found.', 'easy-link-checker'); ?></p>
             </div>
           <?php
           endif;
@@ -260,13 +260,13 @@ class Easy_Link_Checker
       </form>
 
       <div class="mlc-check-options">
-        <label for="check_links"><input type="checkbox" id="check_links" name="check_links" value="1" checked> <?php _e('Check Links', 'simple-link-checker'); ?></label>
-        <label for="check_internal_only"><input type="checkbox" id="check_internal_only" name="check_internal_only" value="1"> <?php _e('Check Internal Links Only', 'simple-link-checker'); ?></label>
-        <label for="check_images"><input type="checkbox" id="check_images" name="check_images" value="1"> <?php _e('Check Images', 'simple-link-checker'); ?></label>
+        <label for="check_links"><input type="checkbox" id="check_links" name="check_links" value="1" checked> <?php _e('Check Links', 'easy-link-checker'); ?></label>
+        <label for="check_internal_only"><input type="checkbox" id="check_internal_only" name="check_internal_only" value="1"> <?php _e('Check Internal Links Only', 'easy-link-checker'); ?></label>
+        <label for="check_images"><input type="checkbox" id="check_images" name="check_images" value="1"> <?php _e('Check Images', 'easy-link-checker'); ?></label>
       </div>
 
       <div>
-        <button type="button" id="mlc-check-links" class="button button-primary"><?php _e('Start Check', 'simple-link-checker'); ?></button> <span id="mlc-spinner" style="display: none;"><img src="<?php echo admin_url('images/spinner.gif'); ?>" alt="<?php esc_attr_e('Loading...', 'simple-link-checker'); ?>"></span>
+        <button type="button" id="mlc-check-links" class="button button-primary"><?php _e('Start Check', 'easy-link-checker'); ?></button> <span id="mlc-spinner" style="display: none;"><img src="<?php echo admin_url('images/spinner.gif'); ?>" alt="<?php esc_attr_e('Loading...', 'easy-link-checker'); ?>"></span>
       </div>
 
     </div>
@@ -278,7 +278,7 @@ class Easy_Link_Checker
    */
   public function mlc_render_status_links($post_status, $post_type, $posts_per_page)
   {
-    $base_link = admin_url('admin.php?page=simple-link-checker&post_type=' . $post_type . '&posts_per_page=' . $posts_per_page);
+    $base_link = admin_url('admin.php?page=easy-link-checker&post_type=' . $post_type . '&posts_per_page=' . $posts_per_page);
 
     // 投稿ステータスのフィルタリングリンク
     echo '<div class="subsubsub">';
@@ -315,7 +315,7 @@ class Easy_Link_Checker
    */
   public function mlc_render_filters($post_type, $posts_per_page, $post_month, $post_category, $total_posts, $total_pages, $current_page, $s = '')
   {
-    $base_link = admin_url('admin.php?page=simple-link-checker&post_type=' . $post_type . '&posts_per_page=' . $posts_per_page);
+    $base_link = admin_url('admin.php?page=easy-link-checker&post_type=' . $post_type . '&posts_per_page=' . $posts_per_page);
 
     echo '<div class="tablenav top">';
     echo '<div class="alignleft actions">';
@@ -327,7 +327,7 @@ class Easy_Link_Checker
       echo '<option value="">' . __('All dates', 'default') . '</option>';
       foreach ($months as $month) {
         $month_timestamp = mktime(0, 0, 0, $month->month, 1, $month->year);
-        $formatted_month = date_i18n(__('F Y', 'simple-link-checker'), $month_timestamp);
+        $formatted_month = date_i18n(__('F Y', 'easy-link-checker'), $month_timestamp);
         echo '<option value="' . esc_attr($month->year . sprintf('%02d', $month->month)) . '"' . selected($post_month, $month->year . sprintf('%02d', $month->month), false) . '>' . esc_html($formatted_month) . '</option>';
       }
       echo '</select>';
@@ -383,7 +383,7 @@ class Easy_Link_Checker
     // ページネーション
     if ($total_pages > 1) {
       echo '<div class="tablenav-pages">
-              <span class="displaying-num">' . sprintf(__('%s items', 'simple-link-checker'), $total_posts) . '</span>
+              <span class="displaying-num">' . sprintf(__('%s items', 'easy-link-checker'), $total_posts) . '</span>
               <span class="pagination-links">';
 
       // 「<<」最初のページへのリンク
@@ -557,7 +557,7 @@ class Easy_Link_Checker
               $redirected_links[] = [
                 'url' => $link,
                 'redirects' => $redirect_count,
-                'message' => sprintf(__('Redirected %s times', 'simple-link-checker'), $redirect_count),
+                'message' => sprintf(__('Redirected %s times', 'easy-link-checker'), $redirect_count),
               ];
             } else {
               $valid_links[] = $link;
