@@ -8,9 +8,9 @@ Easy Link Checker is a **lightweight** WordPress plugin that allows you to manua
 
 ## Features
 
-- Check internal and external links in selected posts.(<a href="...">)
+- Check internal and external links in selected posts.(&lt;a href="..."&gt;)
 - Option to check internal links only.
-- Option to check images.(<img src="...">)
+- Option to check images.(&lt;img src="..."&gt;)
 - Supports checking posts, pages and custom post types.
 - Supports filtering by custom taxonomies.
 - **Lightweight**: No background processes.
@@ -57,9 +57,9 @@ Easy Link Checkerは、WordPressの管理画面から選択した投稿内のリ
 
 ## 特徴
 
-- 選択した投稿内の内部リンクおよび外部リンク（<a href="...">）をチェック。
+- 選択した投稿内の内部リンクおよび外部リンク (&lt;a href="..."&gt;) をチェック。
 - 内部リンクのみをチェックするオプション。
-- 画像タグ（<img src="...">）をチェックするオプション。
+- 画像タグ (&lt;img src="..."&gt;) をチェックするオプション。
 - 投稿、固定ページのほか、カスタム投稿タイプのチェックに対応。
 - カスタムタクソノミーでのフィルタリングに対応。
 - **軽量**：バックグラウンドプロセスなし。
