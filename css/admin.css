@@ -1,0 +1,65 @@
+.link-check-status {
+  white-space: nowrap;
+}
+
+.link-check-status a {
+  display: inline-block;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mlc-label {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.mlc-label-nolinks {
+  background-color: gray;
+}
+
+.mlc-label-ok {
+  background-color: green;
+}
+
+.mlc-label-broken {
+  background-color: red;
+}
+
+.mlc-label-skipped {
+  background-color: blue;
+}
+
+.mlc-await {
+  color: gray;
+  font-weight: bold;
+  -webkit-animation: blink 1s ease-in-out infinite alternate;
+  -moz-animation: blink 1s ease-in-out infinite alternate;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.mlc-check-options {
+  margin: 12px 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: left;
+}
+
+.mlc-checked-item {
+  padding: 8px 0;
+}
