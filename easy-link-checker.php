@@ -86,7 +86,7 @@ class Easy_Link_Checker
   public function mlc_add_admin_page()
   {
     add_menu_page(
-      __('Simple Link Checker', 'easy-link-checker'), // ページタイトル
+      __('Easy Link Checker', 'easy-link-checker'), // ページタイトル
       __('Link Checker', 'easy-link-checker'), // メニュータイトル
       'manage_options', // 権限
       'easy-link-checker', // スラッグ
@@ -152,7 +152,7 @@ class Easy_Link_Checker
     $total_pages = ceil($total_posts / $posts_per_page);
 ?>
     <div class="wrap">
-      <h1><?php _e('Simple Link Checker', 'easy-link-checker'); ?></h1>
+      <h1><?php _e('Easy Link Checker', 'easy-link-checker'); ?></h1>
       <form id="mlc-post-type-form" method="get">
         <input type="hidden" name="page" value="easy-link-checker">
         <label for="post_type"><?php _e('Select Post Type:', 'easy-link-checker'); ?></label>
