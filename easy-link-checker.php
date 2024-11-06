@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Easy Link Checker
  * Description: WordPress plugin to manually check for broken links (internal & external) in selected posts from the admin panel.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Cravel
  * Author URI: https://cravelweb.com
  * Donate link: https://www.buymeacoffee.com/cravel
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-define('MLC_VERSION', '1.0.1');
+define('MLC_VERSION', '1.0.2');
 
 class Easy_Link_Checker
 {
@@ -52,7 +52,7 @@ class Easy_Link_Checker
    */
   public function mlc_enqueue_scripts($hook)
   {
-    if ($hook != 'toplevel_page_easy-link-checker') return;
+    if ($hook != 'tools_page_easy-link-checker') return;
     wp_enqueue_script('mlc-admin', plugin_dir_url(__FILE__) . 'js/admin.js', ['jquery'], MLC_VERSION, true);
     wp_localize_script('mlc-admin', 'mlc_vars', [
       'ajax_url' => admin_url('admin-ajax.php'),
@@ -78,8 +78,8 @@ class Easy_Link_Checker
    */
   public function mlc_enqueue_styles($hook)
   {
-    if ($hook != 'toplevel_page_easy-link-checker') return;
-    wp_enqueue_style('mlc-admin', plugin_dir_url(__FILE__) . 'css/admin.css', [], MLC_VERSION);
+    if ($hook != 'tools_page_easy-link-checker') return;
+    wp_enqueue_style('mlc-admin', plugin_dir_url(__FILE__) . 'css/admin.css', [], MLC_VERSION, 'all');
   }
 
   /**
@@ -87,7 +87,7 @@ class Easy_Link_Checker
    */
   public function mlc_add_admin_page()
   {
-    add_options_page(
+    add_management_page(
       __('Easy Link Checker', 'easy-link-checker'), // ページタイトル
       __('Easy Link Checker', 'easy-link-checker'), // メニュータイトル
       'manage_options', // 権限

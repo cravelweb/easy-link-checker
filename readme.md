@@ -26,7 +26,7 @@ Easy Link Checker is a **lightweight** plugin that allows you to manually check 
 
 ## Usage
 
-1. In the WordPress admin panel, navigate to **Settings > Easy Link Checker**.
+1. In the WordPress admin panel, navigate to **Tools > Easy Link Checker**.
 2. Select the post type and adjust filters as needed.
 3. Select the posts you want to check.
 4. Click on **Start Check** to begin checking for broken links.
@@ -75,7 +75,7 @@ Easy Link Checkerは、WordPressの管理画面から選択した投稿内のリ
 
 ## 使い方
 
-1. WordPressの管理画面で、**設定** メニューから **Easy Link Checker** を選択します。
+1. WordPressの管理画面で、**ツール** メニューから **Easy Link Checker** を選択します。
 2. 投稿タイプを選択し、必要に応じてフィルターを調整します。
 3. チェックしたい投稿を選択します。
 4. **チェック開始** ボタンをクリックして、リンク切れのチェックを開始します。

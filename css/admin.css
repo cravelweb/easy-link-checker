@@ -77,7 +77,6 @@
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
-  align-items: left;
 }
 
 .mlc-checked-item {
