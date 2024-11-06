@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Easy Link Checker
  * Description: WordPress plugin to manually check for broken links (internal & external) in selected posts from the admin panel.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Cravel
  * Author URI: https://cravelweb.com
  * Donate link: https://www.buymeacoffee.com/cravel
@@ -12,6 +12,8 @@
 if (!defined('ABSPATH')) {
   exit;
 }
+
+define('MLC_VERSION', '1.0.1');
 
 class Easy_Link_Checker
 {
@@ -51,7 +53,7 @@ class Easy_Link_Checker
   public function mlc_enqueue_scripts($hook)
   {
     if ($hook != 'toplevel_page_easy-link-checker') return;
-    wp_enqueue_script('mlc-admin', plugin_dir_url(__FILE__) . 'js/admin.js', ['jquery'], '1.0.0', true);
+    wp_enqueue_script('mlc-admin', plugin_dir_url(__FILE__) . 'js/admin.js', ['jquery'], MLC_VERSION, true);
     wp_localize_script('mlc-admin', 'mlc_vars', [
       'ajax_url' => admin_url('admin-ajax.php'),
       'nonce' => wp_create_nonce('mlc_nonce'),
@@ -77,7 +79,7 @@ class Easy_Link_Checker
   public function mlc_enqueue_styles($hook)
   {
     if ($hook != 'toplevel_page_easy-link-checker') return;
-    wp_enqueue_style('mlc-admin', plugin_dir_url(__FILE__) . 'css/admin.css', [], '1.0.0');
+    wp_enqueue_style('mlc-admin', plugin_dir_url(__FILE__) . 'css/admin.css', [], MLC_VERSION);
   }
 
   /**
@@ -85,13 +87,12 @@ class Easy_Link_Checker
    */
   public function mlc_add_admin_page()
   {
-    add_menu_page(
+    add_options_page(
       __('Easy Link Checker', 'easy-link-checker'), // ページタイトル
-      __('Link Checker', 'easy-link-checker'), // メニュータイトル
+      __('Easy Link Checker', 'easy-link-checker'), // メニュータイトル
       'manage_options', // 権限
       'easy-link-checker', // スラッグ
-      [$this, 'mlc_admin_page'], // コールバック関数
-      'dashicons-admin-links' // アイコン
+      [$this, 'mlc_admin_page'] // コールバック関数
     );
   }
 
@@ -104,7 +105,16 @@ class Easy_Link_Checker
     $post_type = isset($_GET['post_type']) ? sanitize_text_field($_GET['post_type']) : 'post';
     $posts_per_page = isset($_GET['posts_per_page']) ? intval($_GET['posts_per_page']) : 20;
     $current_page = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
-    $post_status = isset($_GET['post_status']) ? sanitize_text_field($_GET['post_status']) : ['publish', 'private'];
+    if (isset($_GET['post_status'])) {
+      $post_status = sanitize_text_field($_GET['post_status']);
+      if ($post_status === 'all') {
+        $post_status = ['publish', 'private', 'draft', 'pending', 'trash'];
+      } else {
+        $post_status = [$post_status];
+      }
+    } else {
+      $post_status = ['publish', 'private'];
+    }
 
     // 投稿月
     $post_month = isset($_GET['m']) ? sanitize_text_field($_GET['m']) : '';

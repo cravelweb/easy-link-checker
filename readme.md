@@ -4,7 +4,7 @@
 
 ## Description
 
-Easy Link Checker is a **lightweight** WordPress plugin that allows you to manually check for broken links (internal & external) in selected posts from the admin panel. It does not run any background processes, nor does it modify or save any data. You can use it easily whenever needed.
+Easy Link Checker is a **lightweight** plugin that allows you to manually check for broken links (both internal and external) within selected posts from the WordPress admin panel. It does not run in the background, nor does it modify or save any data, so it doesn't burden system performance or disk space. Without getting in the way, you can easily check for dead links and broken image links whenever you need.
 
 ## Features
 
@@ -26,7 +26,7 @@ Easy Link Checker is a **lightweight** WordPress plugin that allows you to manua
 
 ## Usage
 
-1. In the WordPress admin panel, navigate to **Link Checker** in the sidebar menu.
+1. In the WordPress admin panel, navigate to **Settings > Easy Link Checker**.
 2. Select the post type and adjust filters as needed.
 3. Select the posts you want to check.
 4. Click on **Start Check** to begin checking for broken links.
@@ -53,7 +53,7 @@ This plugin is licensed under the [GNU General Public License v2 or later](https
 
 ## 説明
 
-Easy Link Checkerは、WordPressの管理画面から選択した投稿内のリンク切れ（内部リンクおよび外部リンク）を手動でチェックできる軽量なプラグインです。バックグラウンドでの動作はなく、データの書き換えや保存を行いません。必要なときに簡単に利用できます。
+Easy Link Checkerは、WordPressの管理画面から選択した投稿内のリンク切れ（内部リンクおよび外部リンク）を手動でチェックできる軽量なプラグインです。バックグラウンドでの動作はなく、データの書き換えや保存も行わないのでシステム動作やディスク領域を圧迫しません。邪魔にならず必要なときに簡単にデッドリンクや画像リンク切れをチェックできます。
 
 ## 特徴
 
@@ -75,7 +75,7 @@ Easy Link Checkerは、WordPressの管理画面から選択した投稿内のリ
 
 ## 使い方
 
-1. WordPressの管理画面で、サイドバーのメニューから *リンクチェッカー** を選択します。
+1. WordPressの管理画面で、**設定** メニューから **Easy Link Checker** を選択します。
 2. 投稿タイプを選択し、必要に応じてフィルターを調整します。
 3. チェックしたい投稿を選択します。
 4. **チェック開始** ボタンをクリックして、リンク切れのチェックを開始します。
